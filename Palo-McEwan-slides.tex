@@ -26,6 +26,14 @@
 \setlength{\leftmargini}{0pt}
 \setlength{\leftmarginii}{1em}
 
+%% Write out the names of graphics files being included 
+\newwrite\graphics
+\immediate\openout\graphics=\jobname.graphics%
+\let\oincludegraphics\includegraphics% store original \includegraphics
+\renewcommand{\includegraphics}[2][]{% prepend to it (could also use xpatch, etc.)
+  \immediate\write\graphics{#2}
+  \oincludegraphics[#1]{#2}}
+
 \newcommand{\kommentti}[1]{
   {\bf[#1]}
 }
