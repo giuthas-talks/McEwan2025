@@ -49,14 +49,29 @@
   \centering
 } 
 
+\frame{\frametitle{Land acknowledgement}
+  I would like to respectfully acknowledge that we are located on Treaty 6
+  territory, a traditional gathering place for diverse Indigenous peoples
+  including the Cree, Blackfoot, Métis, Nakota Sioux, Iroquois, Dene, Ojibway/
+  Saulteaux/Anishinaabe, Inuit, and many others. I am a very recent uninvited
+  guest and I have only started learning about their histories, languages, and
+  cultures and of their historical and continued contribution to our community.
+  
+  }
+
 \frame{\frametitle{Outline}
   \begin{itemize}
     \item Introductions - Me and the topic
     \item Some naming experiments
-    \item First tool: Pixel Difference (PD)
-    \item Second tool: Mean Squared Error (MSE)
+    \item The principles
+    \item The tool: Pixel Difference (PD)
     \item Conclusion
+    % \item Second tool: Mean Squared Error (MSE)
   \end{itemize}
+  \vfill
+  {
+  You can find these slides at: \url{https://github.com/giuthas-talks/McEwan2025/}
+  }
 }
 
 \frame{\frametitle{Who's this Pertti Palo?}
@@ -66,12 +81,12 @@
     \end{column}
     \begin{column}{5cm}
       \begin{itemize}
-      \item I have a couple of degrees in engineering and a PhD in Phonetics.
-      \item I also have a life in folk music, folk dancing, wandering (hiking
-      and long distance skiing), role-playing games, crafts (knitting, terrain
-      crafting, and other things).
-      \item I grew up in Finland, became me in Scotland and have since worked
-      in Indiana and here in Edmonton.
+        \item I grew up in Finland, became me in Scotland and have since worked
+        in Indiana and here in Edmonton.
+        \item I have a couple of degrees in engineering and a PhD in Phonetics.
+        \item I also have a life in folk music, folk dancing, oral
+        storytelling, wandering (hiking and long distance skiing), role-playing
+        games, crafts (knitting, terrain crafting, and other things).
       \end{itemize}
     \end{column}
   \end{columns}
@@ -90,6 +105,19 @@
 	\includegraphics[width=\textwidth]{figures/stages_of_naming.jpg}
 }
 
+
+\frame{
+  \centering
+  {
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    \vfill
+    Some naming experiments
+    
+    \vfill
+%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+  }
+}
 \frame{\frametitle{Demo of classical naming}
   \begin{itemize}
     \item Let's try some versions of naming experiments.
@@ -202,7 +230,6 @@
   \end{itemize} 
 }
 
-
 \frame{
   \centering
   {
@@ -249,6 +276,40 @@
   \end{itemize}   
 }
 
+\frame{
+  \centering
+  {
+    \vfill
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    The principles    
+    \vfill
+%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+  }
+}
+
+\frame{\frametitle{The principles I}
+	\begin{itemize}
+	\item When we are holding a hammer, everything looks like a nail.
+	\item Every tool is a hammer\ldots
+	\begin{itemize}
+    \item \ldots at least until the first time we use it as a hammer\ldots
+    \item \ldots which may lead to the item no longer being a tool at all.
+	\end{itemize}
+  \end{itemize}
+}
+
+\frame{\frametitle{The principles II}
+\begin{itemize}
+  \item The first thing to do is to figure out if we have nails or something
+  else.
+  \item The second thing to do is to figure out if we are holding a hammer or
+  something else.
+  \item And then get the right tool for the job, if we aren't lucky to begin
+  with.
+  \item And to keep in mind that 'good' is often better than 'best'.
+\end{itemize}
+}
 
 \frame{
   \centering
@@ -256,18 +317,18 @@
     \vfill
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Pixel Difference (PD)    
+    The tool: Pixel Difference (PD)    
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
   }
 }
 
-
-
 \frame{\frametitle{Pixel Difference (PD)}
 	\begin{itemize}
-	\item The first tool out of the box happened to work adequately --  and so for my
-	thesis I used Euclidean distance or $l2$-norm to identify articulatory onsets.
+    \item The first tool out of the box was manual video segmentation.
+    \item The second tool out of the box happened to work much better --  and so
+    for my thesis I used Euclidean distance or $l2$-norm to identify
+    articulatory onsets.
 	\end{itemize}
 
 
@@ -324,6 +385,31 @@
 	\includegraphics[height=.8\textheight]{figures/pixel_difference_demo_noise_square_sum_tall.png}
 }
 
+\frame{\frametitle{Pixel Difference (PD): The maths even more simply}
+	
+\begin{columns}
+  \begin{column}{5cm}
+    \includegraphics[width=\columnwidth]{figures/1024px-Pythagorean.svg.png}
+  \end{column}
+  \begin{column}{5cm}
+    \centering
+    Pythagorean Theorem:
+    \begin{equation*}
+      a^2 + b^2 = c^2
+    \end{equation*}
+    \citep{Euclid-ElementsBooksIXIII-2006}
+  \end{column}
+\end{columns}
+\vfill
+  {\scriptsize
+    By en:User:Wapcaplet - Transwikied from en:. Originally created by
+    en:User:Michael Hardy, then scaled, with colour and labels being added by
+    en:User:Wapcaplet, transformed in svg format by fr:Utilisateur:Steff, changed
+    colors and font by de:Leo2004, CC BY-SA 3.0,
+    \url{https://commons.wikimedia.org/w/index.php?curid=640875} 
+  }
+}
+
 \frame{
   \centering
   {
@@ -349,12 +435,12 @@
 }
 
 \frame{\frametitle{Theory: Effect of OD on AAI}
-	\begin{itemize}
-		\item As the Onset Duration (OD) gets longer, Articulatory to Acoustic
-		Interval (AAI) shortens.
-		\item First three lines represent individual utterances, final line is
-		a conceptual model of the effect of continuously lengthening OD.6
-	\end{itemize}
+	% \begin{itemize}
+	% 	\item As the Onset Duration (OD) gets longer, Articulatory to Acoustic
+	% 	Interval (AAI) shortens.
+	% 	% \item First three lines represent individual utterances, final line is
+	% 	% a conceptual model of the effect of continuously lengthening OD.
+	% \end{itemize}
 	\begin{center}
 		\hspace*{-.5cm}
 		\includegraphics[width=1.1\textwidth]{effect_of_OD.drawio.png}
@@ -362,11 +448,11 @@
 }
 
 \frame{\frametitle{Theory: Effect of articulatory rate on AAI}
-	\begin{itemize}
-		\item If we keep the utterance content constant but vary articulation
-		rate, all parts (AAI, OD, and acoustic word) get longer as articulation
-		rate goes down.
-	\end{itemize}
+	% \begin{itemize}
+	% 	\item If we keep the utterance content constant but vary articulation
+	% 	rate, all parts (AAI, OD, and acoustic word) get longer as articulation
+	% 	rate goes down.
+	% \end{itemize}
 	\begin{center}
 		\hspace*{-.5cm}
 		\includegraphics[width=\textwidth]{effect_of_RhymeDur.drawio.png}
@@ -386,10 +472,9 @@
 
 
 \frame{\frametitle{References}
-  
-\bibliographystyle{apalike}
-\bibliography{main}
-
+  \tiny
+  \bibliographystyle{apalike}
+  \bibliography{main}
 }
 
 \frame{
@@ -397,7 +482,7 @@
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Something else i.e. section title
+    Thank you! Questions?
     
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
