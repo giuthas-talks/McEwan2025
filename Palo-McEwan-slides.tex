@@ -65,10 +65,10 @@ The search for good analysis tools}
   \begin{itemize}
     \item Introductions - Me and the topic
     \item Some naming experiments
-    \item The principles
+    \item Some principles
     \item The tool: Pixel Difference (PD)
     \item Some quick results
-    \item Conclusion
+    \item Conclusions
     % \item Second tool: Mean Squared Error (MSE)
   \end{itemize}
   \vfill
@@ -287,13 +287,13 @@ The search for good analysis tools}
     \vfill
     \bf \Large 
     \usebeamercolor[fg]{title}
-    The principles    
+    Some principles    
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
   }
 }
 
-\frame{\frametitle{The principles I}
+\frame{\frametitle{Some principles I}
 	\begin{itemize}
 	\item When we are holding a hammer, everything looks like a nail.
 	\item Every tool is a hammer\ldots
@@ -304,15 +304,13 @@ The search for good analysis tools}
   \end{itemize}
 }
 
-\frame{\frametitle{The principles II}
+\frame{\frametitle{Some principles II}
 \begin{itemize}
-  \item The first thing to do is to figure out if we have nails or something
-  else.
-  \item The second thing to do is to figure out if we are holding a hammer or
-  something else.
+  \item The first thing to do is to figure out if the tools we have match the
+  question and data we have.
   \item And then get the right tool for the job, if we aren't lucky to begin
   with.
-  \item And to keep in mind that 'good' is often better than 'best'.
+  \item Keeping in mind that 'good' is usually better than 'best'.
 \end{itemize}
 }
 
@@ -331,9 +329,7 @@ The search for good analysis tools}
 \frame{\frametitle{Pixel Difference (PD)}
 	\begin{itemize}
     \item The first tool out of the box was manual video segmentation.
-    \item The second tool out of the box happened to work much better --  and so
-    for my thesis I used Euclidean distance or $l2$-norm to identify
-    articulatory onsets.
+    \item The second tool out of the box happened to work much better.
 	\end{itemize}
 
 
@@ -358,39 +354,7 @@ The search for good analysis tools}
 		\end{itemize}
 }
 
-\frame{\frametitle{Pixel Difference (PD): Raw vs. Interpolated}
-	\begin{itemize}
-		\item PD is usually calculated on 
-		\begin{itemize}
-			\item (a) uninterpolated (probe-return) ultrasound data instead of
-			\item (b) interpolated (human-readable) data.
-		\end{itemize}
-	\end{itemize}
-	\centering
-	\includegraphics[height=.7\textheight]{figures/raw_and_interpolated.jpg}
-
-	}
-
-\frame{\frametitle{Pixel Difference (PD): The maths}
-	\begin{equation*}
-	l2(t+0.5) = \sqrt{\sum_{i, j} (x(i,j,t+1) - x(i,j,t))^2}
-	\end{equation*}
-
-	\begin{itemize}
-		\item $i$ and $j$ are indices that span the width and height of the
-		image, $t$ is the time index.
-		\item Like said, this is actually just the Pythagorean theorem applied
-		in a space with a lot more dimensions than 2.
-	\end{itemize}
-
-	}
-
-\frame{\frametitle{Pixel Difference (PD): The maths visually}
-	\centering
-	\includegraphics[height=.8\textheight]{figures/pixel_difference_demo_noise_square_sum_tall.png}
-}
-
-\frame{\frametitle{Pixel Difference (PD): The maths even more simply}
+\frame{\frametitle{Pixel Difference (PD): Pythagoras (wasn't first)}
 	
 \begin{columns}
   \begin{column}{5cm}
@@ -415,13 +379,32 @@ The search for good analysis tools}
   }
 }
 
+\frame{\frametitle{Pixel Difference (PD): The maths}
+	\begin{equation*}
+	l2(t+0.5) = \sqrt{\sum_{i, j} (x(i,j,t+1) - x(i,j,t))^2}
+	\end{equation*}
+
+	\begin{itemize}
+		\item $i$ and $j$ are indices that span the width and height of the
+		image, $t$ is the time index.
+		\item Like said, this is actually just the Pythagorean theorem applied
+		in a space with a lot more dimensions than 2.
+	\end{itemize}
+
+	}
+
+\frame{\frametitle{Pixel Difference (PD): The maths visually}
+	\centering
+	\includegraphics[height=.8\textheight]{figures/pixel_difference_demo_noise_square_sum_tall.png}
+}
+
 \frame{
   \centering
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
     \vfill
-    Developments with PD
+    Some quick results
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
   }
@@ -475,11 +458,41 @@ The search for good analysis tools}
 	
 }
 
+\frame{
+  \centering
+  {
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    \vfill
+    Conclusions
+    \vfill
+%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+  }
+}
 
-\frame{\frametitle{References}
-  \tiny
-  \bibliographystyle{apalike}
-  \bibliography{main}
+\frame{\frametitle{Conclusions}
+Speech initiation:
+\begin{itemize}
+  \item It's a lot more complex than I would have thought almost 12 years ago.
+  \item The results in this talk rest on samples that aren't terribly big and
+  don't span too many languages (but aren't based in just English).
+\end{itemize}
+\vfill
+Methods:
+  \begin{itemize}
+		\item We don't always need to look to super complicated tools to actually
+		make a drastic improvement in a workflow.
+    \item We should always spare at least a short moment to think about methods
+    -- arguably even when doing a 1:1 replication of a previous study.
+    \item We should try to find a balance between doubting our methods and just
+    getting on with the work.
+	\end{itemize}
+
+	}
+
+\frame{\frametitle{Pixel Difference (PD): The maths visually}
+	\centering
+	\includegraphics[height=.8\textheight]{figures/pixel_difference_demo_noise_square_sum_tall.png}
 }
 
 \frame{
@@ -492,6 +505,12 @@ The search for good analysis tools}
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
   }
+}
+
+\frame{\frametitle{References}
+  \tiny
+  \bibliographystyle{apalike}
+  \bibliography{main}
 }
 
 
