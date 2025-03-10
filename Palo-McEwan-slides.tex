@@ -28,7 +28,7 @@
 
 %% Write out the names of graphics files being included 
 \newwrite\graphics
-\immediate\openout\graphics=\jobname.graphics%
+\immediate\openout\graphics=materials/\jobname.graphics%
 \let\oincludegraphics\includegraphics% store original \includegraphics
 \renewcommand{\includegraphics}[2][]{% prepend to it (could also use xpatch, etc.)
   \immediate\write\graphics{#2}
