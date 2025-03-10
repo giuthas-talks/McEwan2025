@@ -15,7 +15,7 @@ find the onset in grainy grayscale videos. All of this will provide motivation
 for keeping an open mind when it comes time to select research tools, and if
 necessary, find new ones.
 
-[Slides (pdf)](Palo-McEwan-slides.pdf) and [segmentation example (pdf)](segmentation.pdf).
+[Slides (pdf)](Palo-McEwan-slides.pdf) and [segmentation example (pdf)](materials/segmentation.pdf).
 
 (c) Pertti Palo 2023 CC-by-nc-sa - see [License](LICENSE.md) for terms for
 using my content and slides for references to images used under academic fair
